@@ -65,21 +65,24 @@ body {
   /* margin: 0 auto; */
   /* animation: rotateAround 10s linear infinite ; */
 }
-
+.menu-container:hover {
+  animation-play-state: paused; /* Stop the animation on hover */
+}
 .menu-item {
   position: absolute;
   width: clamp(60px, 12vw, 100px);
   aspect-ratio: 1;
   text-align: center;
   transition: transform 0.3s;
-  top: 50%;
-  left: 50%;
+  top: 45%;
+  left: 45%;
   /* -webkit-animation: spin-right 10s linear infinite; */
   /* animation: spin-right 10s linear infinite; */
 }
 
 .menu-item:hover {
   transform: scale(1.1);
+  /* animation-play-state: paused; Stop the animation on hover */
 }
 .menu-link {
   text-decoration: none;
@@ -87,9 +90,10 @@ body {
   display: block;
   cursor: pointer;
 }
+
 @keyframes orbit {
   from {
-    transform: rotate(0deg) translateX(200px) rotate(0deg);
+    transform: rotate(0deg) translateX(200px)  rotate(0deg);
   }
   to {
     transform: rotate(360deg) translateX(200px) rotate(-360deg);

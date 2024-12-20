@@ -39,14 +39,16 @@ function createMenuItems() {
     //   -3.33 * index
     // }s;`;
     menuContainer.appendChild(menuItem);
-    const angle = (index * (360 / menuItems.length) * Math.PI) / 180;
-    // const angle = index * (360 / menuItems.length);
+    // const angle = (index * (360 / menuItems.length) * Math.PI) / 180;
+    const angle = index * (360 / menuItems.length);
     menuItem.style.transform = `rotate(${angle}deg) translateX(200px) rotate(-${angle}deg)`;
 
     // Add animation
     menuItem.style.animation = `orbit 20s linear infinite`;
     // Add delay to each item
     menuItem.style.animationDelay = `${-index * (20 / menuItems.length)}s`;
+    menuItem.style.animationDirection = "reverse";
+    // menuItem.style.animationPlayState = "paused";
   });
 
   const mobileMenu = document.querySelector(".mobile-menu");
