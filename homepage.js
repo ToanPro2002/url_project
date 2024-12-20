@@ -1,19 +1,19 @@
 const menuItems = [
-  { name: "ĐỀ XUẤT CHỦ TRƯƠNG", url: "/de-xuat-chu-truong" },
-  { name: "ĐỀ XUẤT", url: "/de-xuat" },
-  { name: "NHẬP TÀI SẢN", url: "/nhap-tai-san" },
-  { name: "XUẤT TÀI SẢN", url: "/xuat-tai-san" },
-  { name: "TỒN TÀI SẢN", url: "/ton-tai-san" },
-  { name: "LUÂN CHUYỂN", url: "/luan-chuyen" },
-  { name: "ĐỊNH GIÁ TÀI SẢN", url: "/dinh-gia-tai-san" },
-  { name: "THU HỒI", url: "/thu-hoi" },
-  { name: "THANH LÝ", url: "/thanh-ly" },
-  { name: "BÁN TÀI SẢN", url: "/ban-tai-san" },
-  { name: "THUÊ TÀI SẢN", url: "/thue-tai-san" },
-  { name: "MƯỢN TÀI SẢN", url: "/muon-tai-san" },
-  { name: "TÍNH KHẤU HAO", url: "/tinh-khau-hao" },
-  { name: "VÒNG ĐỜI TÀI SẢN", url: "/vong-doi-tai-san" },
-  { name: "BÁO CÁO", url: "/bao-cao" },
+  { name: "ĐỀ XUẤT CHỦ TRƯƠNG", url: "https://google.com" },
+  { name: "ĐỀ XUẤT", url: "https://google.com" },
+  { name: "NHẬP TÀI SẢN", url: "https://google.com" },
+  { name: "XUẤT TÀI SẢN", url: "https://google.com" },
+  { name: "TỒN TÀI SẢN", url: "https://google.com" },
+  { name: "LUÂN CHUYỂN", url: "https://google.com" },
+  { name: "ĐỊNH GIÁ TÀI SẢN", url: "https://google.com" },
+  { name: "THU HỒI", url: "https://google.com" },
+  { name: "THANH LÝ", url: "https://google.com" },
+  { name: "BÁN TÀI SẢN", url: "https://google.com" },
+  { name: "THUÊ TÀI SẢN", url: "https://google.com" },
+  { name: "MƯỢN TÀI SẢN", url: "https://google.com" },
+  { name: "TÍNH KHẤU HAO", url: "https://google.com" },
+  { name: "VÒNG ĐỜI TÀI SẢN", url: "https://google.com" },
+  { name: "BÁO CÁO", url: "https://google.com" },
 ];
 
 function createMenuItems() {
@@ -47,38 +47,38 @@ function createMenuItems() {
     container.appendChild(menuItem);
   });
 
-  const mobileMenu = document.querySelector('.mobile-menu');
-  menuItems.forEach(item => {
-      const mobileItem = document.createElement('a');
-      mobileItem.href = item.url;
-      mobileItem.target = '_blank';
-      mobileItem.rel = 'noopener noreferrer';
-      mobileItem.className = 'mobile-menu-item';
-      mobileItem.innerHTML = `
+  const mobileMenu = document.querySelector(".mobile-menu");
+  menuItems.forEach((item) => {
+    const mobileItem = document.createElement("a");
+    mobileItem.href = item.url;
+    mobileItem.target = "_blank";
+    mobileItem.rel = "noopener noreferrer";
+    mobileItem.className = "mobile-menu-item";
+    mobileItem.innerHTML = `
           <div class="icon-circle">
               <img src="noel3.png" alt="${item.name}">
           </div>
           <span>${item.name}</span>
       `;
-      mobileMenu.appendChild(mobileItem);
+    mobileMenu.appendChild(mobileItem);
   });
 }
 
 createMenuItems();
 
 // Recalculate positions on window resize
-window.addEventListener('resize', () => {
-  const container = document.querySelector('.container');
-  const menuItems = container.querySelectorAll('.menu-item');
+window.addEventListener("resize", () => {
+  const container = document.querySelector(".container");
+  const menuItems = container.querySelectorAll(".menu-item");
   const radius = Math.min(container.offsetWidth, container.offsetHeight) * 0.35;
   const totalItems = menuItems.length;
   const angleStep = (2 * Math.PI) / totalItems;
 
   menuItems.forEach((item, index) => {
-      const angle = index * angleStep - Math.PI / 2;
-      const x = radius * Math.cos(angle) + (container.offsetWidth / 2) - 50;
-      const y = radius * Math.sin(angle) + (container.offsetHeight / 2) - 50;
-      item.style.left = `${x}px`;
-      item.style.top = `${y}px`;
+    const angle = index * angleStep - Math.PI / 2;
+    const x = radius * Math.cos(angle) + container.offsetWidth / 2 - 50;
+    const y = radius * Math.sin(angle) + container.offsetHeight / 2 - 50;
+    item.style.left = `${x}px`;
+    item.style.top = `${y}px`;
   });
 });
