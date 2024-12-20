@@ -53,6 +53,18 @@ body {
   white-space: normal;
   word-wrap: break-word;
 }
+.menu-container {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+  margin: 0 auto;
+  width: 100%;
+  height: 100%;
+  /* aspect-ratio: 1; */
+  /* margin: 0 auto; */
+  /* animation: rotateAround 10s linear infinite ; */
+}
 
 .menu-item {
   position: absolute;
@@ -60,6 +72,10 @@ body {
   aspect-ratio: 1;
   text-align: center;
   transition: transform 0.3s;
+  top: 50%;
+  left: 50%;
+  /* -webkit-animation: spin-right 10s linear infinite; */
+  /* animation: spin-right 10s linear infinite; */
 }
 
 .menu-item:hover {
@@ -71,7 +87,29 @@ body {
   display: block;
   cursor: pointer;
 }
+@keyframes orbit {
+  from {
+    transform: rotate(0deg) translateX(200px) rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+  }
+}
+/* @keyframes spin-right {
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
+@-webkit-keyframes spin-right {
+  100% {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+} */
 .menu-link:hover {
   color: #0066cc;
 }
@@ -131,7 +169,7 @@ body {
   margin: 0 15px 0 0;
   width: 40px;
   aspect-ratio: 1;
-  flex-shrink:0 ;
+  flex-shrink: 0;
 }
 .mobile-menu-item .icon-circle img {
   width: 50%;
@@ -188,6 +226,7 @@ body {
   .mobile-menu-item:hover {
     transform: scale(1.1);
   }
+
   /* .mobile-menu-item .icon-circle img {
       width: 20px;
       height: 15px;
@@ -197,4 +236,7 @@ body {
       width: 100px;
       height: 100px;
   } */
+  .menu-item {
+    animation: DM1 15s linear infinite; /* Animation name is DM1 */
+  }
 }

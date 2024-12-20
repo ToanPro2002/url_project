@@ -17,25 +17,16 @@ const menuItems = [
 ];
 
 function createMenuItems() {
-  const container = document.querySelector(".container");
+  const container = document.querySelector(".menu-container");
   if (!container) {
     console.error("Container element not found");
     return;
   }
-  const radius = 300; // Distance from center
-  const totalItems = menuItems.length;
-  const angleStep = (2 * Math.PI) / totalItems;
-
+  const menuContainer = document.getElementById("menuContainer");
   menuItems.forEach((item, index) => {
-    const angle = index * angleStep - Math.PI / 2; // Start from top
-    const x = radius * Math.cos(angle) + 400 - 50; // Center X (400) - half item width (50)
-    const y = radius * Math.sin(angle) + 400 - 50; // Center Y (400) - half item height (50)
-
     const menuItem = document.createElement("div");
     menuItem.className = "menu-item";
-    menuItem.style.left = `${x}px`;
-    menuItem.style.top = `${y}px`;
-    console.log(x, y, item);
+
     menuItem.innerHTML = `
       <a href="${item.url}" class= "menu-link" target="_blank" rel="noopener noreferrer">
           <div class="icon-circle">
@@ -44,7 +35,18 @@ function createMenuItems() {
           <span>${item.name}</span>
       </a>`;
 
-    container.appendChild(menuItem);
+    // menuItem.style.animation = `orbit 20s linear infinite; animation-delay: ${
+    //   -3.33 * index
+    // }s;`;
+    menuContainer.appendChild(menuItem);
+    const angle = (index * (360 / menuItems.length) * Math.PI) / 180;
+    // const angle = index * (360 / menuItems.length);
+    menuItem.style.transform = `rotate(${angle}deg) translateX(200px) rotate(-${angle}deg)`;
+
+    // Add animation
+    menuItem.style.animation = `orbit 20s linear infinite`;
+    // Add delay to each item
+    menuItem.style.animationDelay = `${-index * (20 / menuItems.length)}s`;
   });
 
   const mobileMenu = document.querySelector(".mobile-menu");
