@@ -37,7 +37,7 @@ function createMenuItems() {
     menuItem.style.top = `${y}px`;
     console.log(x, y, item);
     menuItem.innerHTML = `
-      <a href="${item.url}" class= "menu-link">
+      <a href="${item.url}" class= "menu-link" target="_blank" rel="noopener noreferrer">
           <div class="icon-circle">
               <img src="noel3.png" alt="${item.name}">
           </div>
@@ -51,6 +51,8 @@ function createMenuItems() {
   menuItems.forEach(item => {
       const mobileItem = document.createElement('a');
       mobileItem.href = item.url;
+      mobileItem.target = '_blank';
+      mobileItem.rel = 'noopener noreferrer';
       mobileItem.className = 'mobile-menu-item';
       mobileItem.innerHTML = `
           <div class="icon-circle">
