@@ -39,17 +39,39 @@ function createMenuItems() {
     //   -3.33 * index
     // }s;`;
     menuContainer.appendChild(menuItem);
-    // const angle = (index * (360 / menuItems.length) * Math.PI) / 180;
-    const angle = index * (360 / menuItems.length);
+    const angle = (index * (360 / menuItems.length) * Math.PI) / 180;
+    // const angle = index * (360 / menuItems.length);
     menuItem.style.transform = `rotate(${angle}deg) translateX(200px) rotate(-${angle}deg)`;
 
     // Add animation
     menuItem.style.animation = `orbit 20s linear infinite`;
     // Add delay to each item
     menuItem.style.animationDelay = `${-index * (20 / menuItems.length)}s`;
-    menuItem.style.animationDirection = "reverse";
+    // menuItem.style.animationDirection = "reverse";
+    });
+
+    document.querySelectorAll(".menu-item").forEach((item) => {
+      item.addEventListener("mouseover", (event) => {
+        item.style.animationPlayState = "paused";
+        document.querySelector(".menu-container").style.animationPlayState = "paused";
+        event.target.style.transform = 'scale(1.5)';
+
+      });
+      item.addEventListener("mouseout", (event) => {
+        item.style.animationPlayState = "running";
+        event.target.style.transform = 'scale(1)';
+      });
+    });
+
+    // document.querySelectorAll(".menu-item").forEach((item) => {
+    //   item.addEventListener("mouseover", (event) => {
+    //     event.target.style.animationPlayState = "paused";
+    //     event.target.style.transform = 'scale(1.2)';
+    //   });
+    // });
     // menuItem.style.animationPlayState = "paused";
-  });
+    // console.log(menuItem);
+  ;
 
   const mobileMenu = document.querySelector(".mobile-menu");
   menuItems.forEach((item) => {
@@ -69,7 +91,13 @@ function createMenuItems() {
 }
 
 createMenuItems();
-
+setTimeout(() => {
+  document.querySelectorAll(".menu-item").forEach((item) => {
+    window.onload = () => {
+      item.style.animationPlayState = "running";
+    }
+  });
+}, 5000);
 // Recalculate positions on window resize
 window.addEventListener("resize", () => {
   const container = document.querySelector(".container");

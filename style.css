@@ -80,10 +80,6 @@ body {
   /* animation: spin-right 10s linear infinite; */
 }
 
-.menu-item:hover {
-  transform: scale(1.1);
-  /* animation-play-state: paused; Stop the animation on hover */
-}
 .menu-link {
   text-decoration: none;
   color: inherit;
@@ -148,7 +144,6 @@ body {
   display: block;
   text-align: center;
 }
-
 /* Mobile menu */
 .mobile-menu {
   display: none;
@@ -215,6 +210,7 @@ body {
   }
   .mobile-menu-item:hover {
     transform: scale(1.1);
+    background-color: #9aa2ae;
   }
 }
 @media screen and (max-width: 480px) {
@@ -229,6 +225,7 @@ body {
   }
   .mobile-menu-item:hover {
     transform: scale(1.1);
+    background-color: #9aa2ae;
   }
 
   /* .mobile-menu-item .icon-circle img {
@@ -240,7 +237,8 @@ body {
       width: 100px;
       height: 100px;
   } */
-  .menu-item {
-    animation: DM1 15s linear infinite; /* Animation name is DM1 */
-  }
+  /* .menu-item {
+    animation: DM1 15s linear infinite;
+  } */
 }
+
