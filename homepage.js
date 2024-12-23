@@ -1,19 +1,19 @@
 const menuItems = [
-  { name: "ĐỀ XUẤT CHỦ TRƯƠNG", url: "https://google.com" },
-  { name: "ĐỀ XUẤT", url: "https://google.com" },
-  { name: "NHẬP TÀI SẢN", url: "https://google.com" },
-  { name: "XUẤT TÀI SẢN", url: "https://google.com" },
-  { name: "TỒN TÀI SẢN", url: "https://google.com" },
-  { name: "LUÂN CHUYỂN", url: "https://google.com" },
-  { name: "ĐỊNH GIÁ TÀI SẢN", url: "https://google.com" },
-  { name: "THU HỒI", url: "https://google.com" },
-  { name: "THANH LÝ", url: "https://google.com" },
-  { name: "BÁN TÀI SẢN", url: "https://google.com" },
-  { name: "THUÊ TÀI SẢN", url: "https://google.com" },
-  { name: "MƯỢN TÀI SẢN", url: "https://google.com" },
-  { name: "TÍNH KHẤU HAO", url: "https://google.com" },
-  { name: "VÒNG ĐỜI TÀI SẢN", url: "https://google.com" },
-  { name: "BÁO CÁO", url: "https://google.com" },
+  { name: "ĐỀ XUẤT CHỦ TRƯƠNG", url: "https://google.com",image: "/assets/de_xuat_chu_truong.png" },
+  { name: "ĐỀ XUẤT", url: "https://google.com",image: "/assets/de_xuat_tai_san.png" },
+  { name: "NHẬP TÀI SẢN", url: "https://google.com",image: "/assets/nhap_tai_san.png" },
+  { name: "XUẤT TÀI SẢN", url: "https://google.com",image: "/assets/xuat_tai_san.png" },
+  { name: "TỒN TÀI SẢN", url: "https://google.com",image: "/assets/ton_tai_san.png" },
+  { name: "LUÂN CHUYỂN", url: "https://google.com",image: "/assets/luan_chuyen_tai_san.png" },
+  { name: "ĐỊNH GIÁ TÀI SẢN", url: "https://google.com",image: "/assets/dinh_gia_tai_san.png" },
+  { name: "THU HỒI", url: "https://google.com",image: "/assets/thu_hoi_tai_san.png" },
+  { name: "THANH LÝ", url: "https://google.com",image: "/assets/thanh_ly.png" },
+  { name: "BÁN TÀI SẢN", url: "https://google.com",image: "/assets/sale_assets.png" },
+  { name: "THUÊ TÀI SẢN", url: "https://google.com",image: "/assets/thue_tai_san.png" },
+  { name: "MƯỢN TÀI SẢN", url: "https://google.com",image: "/assets/muon_tai_san.png" },
+  { name: "TÍNH KHẤU HAO", url: "https://google.com",image: "/assets/tinh_khau_hao.png" },
+  { name: "VÒNG ĐỜI TÀI SẢN", url: "https://google.com",image: "/assets/vong_doi_tai_san.png" },
+  { name: "BÁO CÁO", url: "https://google.com",image: "/assets/bao_cao.png" },
 ];
 
 function createMenuItems() {
@@ -30,7 +30,7 @@ function createMenuItems() {
     menuItem.innerHTML = `
       <a href="${item.url}" class= "menu-link" target="_blank" rel="noopener noreferrer">
           <div class="icon-circle">
-              <img src="noel3.png" alt="${item.name}">
+              <img src="${item.image}" alt="${item.name}">
           </div>
           <span>${item.name}</span>
       </a>`;
@@ -51,15 +51,20 @@ function createMenuItems() {
     });
 
     document.querySelectorAll(".menu-item").forEach((item) => {
-      item.addEventListener("mouseover", (event) => {
-        item.style.animationPlayState = "paused";
-        document.querySelector(".menu-container").style.animationPlayState = "paused";
-        event.target.style.transform = 'scale(1.5)';
-
+      item.addEventListener("mouseover", () => {
+        // item.style.animationPlayState = "paused";
+        // document.querySelectorAll(".menu-container").
+        document.querySelectorAll(".menu-item").forEach((menuItem) => {
+          menuItem.style.animationPlayState = "paused";
+          // menuItem.target.style.transform = 'scale(1.5)';
+        });
       });
-      item.addEventListener("mouseout", (event) => {
-        item.style.animationPlayState = "running";
-        event.target.style.transform = 'scale(1)';
+      item.addEventListener("mouseout", () => {
+        // item.style.animationPlayState = "running";
+        // event.target.style.transform = 'scale(1)';
+        document.querySelectorAll(".menu-item").forEach((menuItem) => {
+          menuItem.style.animationPlayState = "running";
+        });
       });
     });
 
@@ -82,7 +87,7 @@ function createMenuItems() {
     mobileItem.className = "mobile-menu-item";
     mobileItem.innerHTML = `
           <div class="icon-circle">
-              <img src="noel3.png" alt="${item.name}">
+              <img src="${item.image}" alt="${item.name}">
           </div>
           <span>${item.name}</span>
       `;
