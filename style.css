@@ -61,12 +61,16 @@ body {
   margin: 0 auto;
   width: 100%;
   height: 100%;
-  /* cursor: pointer; */
-  transform: scale(1.05) rotate(360deg);
-  transition: transform 1.5s ease-in-out;
+  cursor: pointer;
+  /* transform: scale(1.01) rotate(360deg);
+  transition: transform 1.5s ease-in-out; */
   /* aspect-ratio: 1; */
   /* margin: 0 auto; */
   /* animation: rotateAround 10s linear infinite ; */
+}
+.menu-container:hover {
+  transform: scale(1.01) rotate(360deg);
+  transition: transform 1.5s ease-in-out;
 }
 .menu-item {
   position: absolute;
@@ -104,8 +108,10 @@ body {
 }
 .menu-container:hover .menu-item,
 .menu-container:hover .arrow {
+
   display: block;
   opacity: 1;
+
 }
 /* .menu-item span {
   border: #333 dashed 2px;
@@ -304,6 +310,9 @@ body {
   .icon-circle.active {
     transform: scale(1.5) rotate(360deg);
     transition: transform 0.5s ease-in-out;
+    /* z-index: 1; */
+    position: relative;
+    left: 10%;
   }
 }
 @media screen and (max-width: 480px) {
