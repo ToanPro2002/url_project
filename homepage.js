@@ -273,7 +273,6 @@ class CircularMenu {
 
     this.createMobileMenu();
     this.setupResizeHandler(container);
-    this.createThanhTruot();
   }
 
   createMobileMenu() {
