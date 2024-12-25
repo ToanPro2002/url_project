@@ -191,6 +191,8 @@ body {
 }
 .mobile-menu-item span {
   color: #333;
+  font-weight: 600;
+  font-family:serif;
 }
 .mobile-menu-item .icon-circle {
   margin: 0 15px 0 0;
@@ -304,16 +306,15 @@ body {
     height: 60px;
     border-radius: 50%;
     /* position: relative; */
-    object-fit: cover;
     position: absolute;
     /* animation: slide 10s infinite reverse; */
   }
   .icon-circle.active {
-    transform: scale(1.5) rotate(360deg);
-    transition: transform 0.1s ease-in-out;
+    transform: scale(1.5);
+    transition: transform 2s ease-in-out;
     z-index: 1;
-    position: relative;
-    left: 10%;
+    position: absolute;
+    left: 20%;
   }
 }
 @media screen and (max-width: 480px) {
@@ -322,8 +323,8 @@ body {
   }
 
   .mobile-menu-item .icon-circle {
-    width: 10%;
-    height: 10%;
+    width: 15%;
+    height: 15%;
     margin-right: 10px;
   }
   /* .mobile-menu-item:hover {
@@ -335,7 +336,13 @@ body {
     width: 100%;
     height: 100%;
   }
-
+  .icon-circle.active {
+    transform: scale(1.2); /* Giảm kích thước phóng to */
+    transition: transform 0.3s ease-in-out;
+    z-index: 1;
+    position: absolute; /* Giữ nguyên vị trí */
+    left: 15%; /* Giữ nguyên vị trí */
+  }
   /* .center-icon {
       width: 100px;
       height: 100px;
