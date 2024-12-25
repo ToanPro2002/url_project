@@ -271,10 +271,6 @@ body {
     justify-content: center;
     width: 100%;
   }
-
-  .icon-circle {
-    left: 10%;
-  }
   .menu-item span {
     /* margin-left: 50px; */
     /* position: absolute; */
@@ -302,9 +298,11 @@ body {
     }
   }
   .icon-circle {
-    width: 60px;
-    height: 60px;
+    left: 10%;
+    width: 15%;
+    height: 15%;
     border-radius: 50%;
+    z-index: 1;
     /* position: relative; */
     position: absolute;
     /* animation: slide 10s infinite reverse; */
@@ -323,8 +321,8 @@ body {
   }
 
   .mobile-menu-item .icon-circle {
-    width: 15%;
-    height: 15%;
+    width: 10%;
+    height: 10%;
     margin-right: 10px;
   }
   /* .mobile-menu-item:hover {
