@@ -51,17 +51,19 @@ body {
   font-weight: bold;
   color: #333;
   text-align: center;
-  white-space: normal;
   word-wrap: break-word;
 }
 .menu-container {
   display: flex;
   justify-content: center;
-  gap: 20px;
+  gap: clamp(10px, 2vw, 20px);
   position: relative;
   margin: 0 auto;
   width: 100%;
   height: 100%;
+  /* cursor: pointer; */
+  transform: scale(1.05) rotate(360deg);
+  transition: transform 1.5s ease-in-out;
   /* aspect-ratio: 1; */
   /* margin: 0 auto; */
   /* animation: rotateAround 10s linear infinite ; */
@@ -71,63 +73,74 @@ body {
   width: clamp(150px, 12vw, 100px);
   aspect-ratio: 1;
   text-align: center;
-  transition: transform 0.3s;
+  /* transition: transform 0.3s; */
+
   /* -webkit-animation: spin-right 10s linear infinite; */
   /* animation: spin-right 10s linear infinite; */
 }
 
 .menu-item span {
-  font-size: clamp(15px, 2vw, 12px);
-  color: #0066cc;
-  font-weight: 600;
-  display: block;
-  /* transform: translateX(-49%) translateY(100%); */
-  text-align: center;
-  text-decoration: none;
   /* position: absolute; */
   /* Adjust these values as needed */
+  font-size: clamp(12px, 2vw, 15px);
+  color: #0066cc;
+  font-weight: 600;
+  border: #333 dashed 2px;
+  border-radius: 20px;
+  word-break: break-word;
+  position: absolute;
+  left: 120%;
+  top: 17%;
+  width: clamp(100px, 15vw, 150px);
+  padding: 5px;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
 }
-/* .menu-item,
+.menu-item,
 .arrow {
   display: none;
   opacity: 0;
-  transition: opacity 20s ease-in-out, transform 2s;
+  transition: opacity 20s ease-in-out;
 }
 .menu-container:hover .menu-item,
 .menu-container:hover .arrow {
   display: block;
   opacity: 1;
-  cursor: pointer;
-} */
-.menu-item span {
+}
+/* .menu-item span {
   border: #333 dashed 2px;
   border-radius: 20px;
-}
+  position: absolute;
+  left: 68%;
+  top: 17%;
+  width: 150px;
+  padding: 5px;
+} */
 
-/* .menu-container .icon-circle + span {
+.menu-container .icon-circle + span {
   display: none;
   opacity: 0;
-  transition: opacity 0.3s eas;
+  transition: opacity 1s eas;
 }
 
 .menu-container .icon-circle:hover + span {
   display: block;
   opacity: 1;
-} */
+}
 
 .arrow {
   position: absolute;
   pointer-events: none;
 }
 
-/* @keyframes orbit {
+@keyframes orbit {
   from {
-    transform: rotate(0deg) translateX(200px)  rotate(0deg);
+    transform: rotate(0deg) translateX(0px) rotate(0deg);
   }
   to {
-    transform: rotate(360deg) translateX(200px) rotate(-360deg);
+    transform: rotate(0deg) translateX(400px) rotate(-360deg);
   }
-} */
+}
 .icon-circle {
   width: 60%;
   aspect-ratio: 1;
@@ -140,15 +153,17 @@ body {
   margin: 0 auto 8px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  transition: background-color 0.3s;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  position: absolute;
+  left: 20%;
 }
+
 .icon-circle img {
   width: 80%;
   height: 80%;
   object-fit: contain;
   border-radius: 50%;
 }
-
 
 /* Mobile menu */
 .mobile-menu {
@@ -180,13 +195,13 @@ body {
   width: 80%;
   height: 80%;
 }
-/* .mobile-menu-item .icon-circle + span {
+/* .mobile-menu-item + .icon-circle  {
   display: none;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.mobile-menu-item .icon-circle:hover + span {
+.mobile-menu-item:hover + .icon-circle  {
   display: block;
   opacity: 1;
 } */
@@ -212,6 +227,11 @@ body {
 
   .mobile-menu {
     display: flex;
+    flex-direction: column;
+    gap: 10px;
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
   }
 
   .center-content {
@@ -236,10 +256,54 @@ body {
     width: 60px;
     aspect-ratio: 1;
     margin-right: 10px;
+    /* -webkit-animation: alternate ; */
   }
-  .mobile-menu-item .icon-circle span {
-    display: inline;
-    opacity: 1;
+  .mobile-menu-item {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .icon-circle {
+    left: 10%;
+  }
+  .menu-item span {
+    /* margin-left: 50px; */
+    /* position: absolute; */
+    display: flex;
+    left: 50%;
+    top: 50%;
+    width: 120px;
+    transform: translateX(-50%);
+  }
+  @keyframes slide {
+    0% {
+      transform: translateX(0);
+    }
+    25% {
+      transform: translateX(-150%);
+    }
+    50% {
+      transform: translateX(-300%);
+    }
+    75% {
+      transform: translateX(-450%);
+    }
+    100% {
+      transform: translateX(-600%);
+    }
+  }
+  .icon-circle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    position: relative;
+    object-fit: cover;
+    position: absolute;
+    /* animation: slide 10s infinite reverse; */
+  }
+  .icon-circle.active {
+    transform: scale(1.5) rotate(360deg);
+    transition: transform 0.5s ease-in-out;
   }
 }
 @media screen and (max-width: 480px) {
