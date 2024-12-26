@@ -1,154 +1,82 @@
-// const menuItems = [
-//   {
-//     name: "ĐỀ XUẤT CHỦ TRƯƠNG",
-//     url: "https://google.com",
-//     image: "/assets/de_xuat_chu_truong.png",
-//   },
-//   {
-//     name: "ĐỀ XUẤT",
-//     url: "https://google.com",
-//     image: "/assets/de_xuat_tai_san.png",
-//   },
-//   {
-//     name: "NHẬP TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/nhap_tai_san.png",
-//   },
-//   {
-//     name: "XUẤT TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/xuat_tai_san.png",
-//   },
-//   {
-//     name: "TỒN TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/ton_tai_san.png",
-//   },
-//   {
-//     name: "LUÂN CHUYỂN",
-//     url: "https://google.com",
-//     image: "/assets/luan_chuyen_tai_san.png",
-//   },
-//   {
-//     name: "ĐỊNH GIÁ TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/dinh_gia_tai_san.png",
-//   },
-//   {
-//     name: "THU HỒI",
-//     url: "https://google.com",
-//     image: "/assets/thu_hoi_tai_san.png",
-//   },
-//   {
-//     name: "THANH LÝ",
-//     url: "https://google.com",
-//     image: "/assets/thanh_ly.png",
-//   },
-//   {
-//     name: "BÁN TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/sale_assets.png",
-//   },
-//   {
-//     name: "THUÊ TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/thue_tai_san.png",
-//   },
-//   {
-//     name: "MƯỢN TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/muon_tai_san.png",
-//   },
-//   {
-//     name: "TÍNH KHẤU HAO",
-//     url: "https://google.com",
-//     image: "/assets/tinh_khau_hao.png",
-//   },
-//   {
-//     name: "VÒNG ĐỜI TÀI SẢN",
-//     url: "https://google.com",
-//     image: "/assets/vong_doi_tai_san.png",
-//   },
-//   { name: "BÁO CÁO", url: "https://google.com", image: "/assets/bao_cao.png" },
-// ];
+
 class CircularMenu {
   constructor() {
     this.menuItems = [
       {
-        name: "ĐỀ XUẤT CHỦ TRƯƠNG",
-        url: "https://google.com",
+        name: "PHẦN MỀM KHO",
+        url: "https://ware.vtcode.vn",
         image: "/assets/de_xuat_chu_truong.png",
       },
       {
-        name: "ĐỀ XUẤT",
-        url: "https://google.com",
+        name: "PHẦN MỀM TÀI SẢN",
+        url: "http://asset.vtcode.vn",
         image: "/assets/de_xuat_tai_san.png",
       },
       {
-        name: "NHẬP TÀI SẢN",
-        url: "https://google.com",
+        name: "PHẦN MỀM ĐẶT PHÒNG",
+        url: "http://icool.booknow.vtcode.vn:24600",
         image: "/assets/nhap_tai_san.png",
       },
       {
-        name: "XUẤT TÀI SẢN",
-        url: "https://google.com",
+        name: "ĐỒNG HỒ DOANH THU",
+        url: "http://icoolpos.vtcode.vn:24600/",
         image: "/assets/xuat_tai_san.png",
       },
       {
-        name: "TỒN TÀI SẢN",
-        url: "https://google.com",
+        name: "APP NHÂN VIÊN",
+        url: "http://official.icool.com.vn:8989/",
         image: "/assets/ton_tai_san.png",
       },
       {
-        name: "LUÂN CHUYỂN",
-        url: "https://google.com",
+        name: "RATING",
+        url: "https://rating.icool.com.vn:3443/",
         image: "/assets/luan_chuyen_tai_san.png",
       },
       {
-        name: "ĐỊNH GIÁ TÀI SẢN",
-        url: "https://google.com",
+        name: "CHUÔNG",
+        url: "http://callme.icool.com.vn:8989/",
         image: "/assets/dinh_gia_tai_san.png",
       },
       {
-        name: "THU HỒI",
-        url: "https://google.com",
+        name: "CRM",
+        url: "https://cms-crm.icool.com.vn",
         image: "/assets/thu_hoi_tai_san.png",
       },
       {
-        name: "THANH LÝ",
-        url: "https://google.com",
+        name: "QUẢNG CÁO",
+        url: "http://ads.icool.com.vn:8989",
         image: "/assets/thanh_ly.png",
       },
-      {
-        name: "BÁN TÀI SẢN",
-        url: "https://google.com",
-        image: "/assets/sale_assets.png",
-      },
-      {
-        name: "THUÊ TÀI SẢN",
-        url: "https://google.com",
-        image: "/assets/thue_tai_san.png",
-      },
-      {
-        name: "MƯỢN TÀI SẢN",
-        url: "https://google.com",
-        image: "/assets/muon_tai_san.png",
-      },
-      {
-        name: "TÍNH KHẤU HAO",
-        url: "https://google.com",
-        image: "/assets/tinh_khau_hao.png",
-      },
-      {
-        name: "VÒNG ĐỜI TÀI SẢN",
-        url: "https://google.com",
-        image: "/assets/vong_doi_tai_san.png",
-      },
-      {
-        name: "BÁO CÁO",
-        url: "https://google.com",
-        image: "/assets/bao_cao.png",
-      },
+      // {
+      //   name: "BÁN TÀI SẢN",
+      //   url: "https://google.com",
+      //   image: "/assets/sale_assets.png",
+      // },
+      // {
+      //   name: "THUÊ TÀI SẢN",
+      //   url: "https://google.com",
+      //   image: "/assets/thue_tai_san.png",
+      // },
+      // {
+      //   name: "MƯỢN TÀI SẢN",
+      //   url: "https://google.com",
+      //   image: "/assets/muon_tai_san.png",
+      // },
+      // {
+      //   name: "TÍNH KHẤU HAO",
+      //   url: "https://google.com",
+      //   image: "/assets/tinh_khau_hao.png",
+      // },
+      // {
+      //   name: "VÒNG ĐỜI TÀI SẢN",
+      //   url: "https://google.com",
+      //   image: "/assets/vong_doi_tai_san.png",
+      // },
+      // {
+      //   name: "BÁO CÁO",
+      //   url: "https://google.com",
+      //   image: "/assets/bao_cao.png",
+      // },
     ];
   }
 
@@ -228,7 +156,10 @@ class CircularMenu {
 
       const span_index = menuItem.querySelector(".text");
       if (angle > 90 && angle < 270) {
-        span_index.style.left = "-20%";
+        span_index.style.left = "-30%";
+      }
+      else{
+        span_index.style.left = "130%";
       }
       if (angle > 250 && angle < 270) {
         span_index.style.top = "-20%";
@@ -295,19 +226,20 @@ class CircularMenu {
 
   setupResizeHandler(container) {
     window.addEventListener("resize", () => {
-      const menuItems = container.querySelectorAll(".menu-item");
-      const radius =
-        Math.min(container.offsetWidth, container.offsetHeight) * 0.35;
-      const totalItems = menuItems.length;
-      const angleStep = (2 * Math.PI) / totalItems;
+      window.location.reload();
+      // const menuItems = container.querySelectorAll(".menu-item");
+      // const radius =
+      //   Math.min(container.offsetWidth, container.offsetHeight) * 0.35;
+      // const totalItems = menuItems.length;
+      // const angleStep = (2 * Math.PI) / totalItems;
 
-      menuItems.forEach((item, index) => {
-        const angle = index * angleStep - Math.PI / 2;
-        const x = radius * Math.cos(angle) + container.offsetWidth / 2 - 50;
-        const y = radius * Math.sin(angle) + container.offsetHeight / 2 - 50;
-        item.style.left = `${x}px`;
-        item.style.top = `${y}px`;
-      });
+      // menuItems.forEach((item, index) => {
+      //   const angle = index * angleStep - Math.PI / 2;
+      //   const x = radius * Math.cos(angle) + container.offsetWidth / 2 - 50;
+      //   const y = radius * Math.sin(angle) + container.offsetHeight / 2 - 50;
+      //   item.style.left = `${x}px`;
+      //   item.style.top = `${y}px`;
+      // });
     });
   }
 
