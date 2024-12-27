@@ -1,51 +1,50 @@
-
 class CircularMenu {
   constructor() {
     this.menuItems = [
       {
         name: "PHẦN MỀM KHO",
         url: "https://ware.vtcode.vn",
-        image: "/assets/de_xuat_chu_truong.png",
+        image: "/assets/1.png",
       },
       {
         name: "PHẦN MỀM TÀI SẢN",
         url: "http://asset.vtcode.vn",
-        image: "/assets/de_xuat_tai_san.png",
+        image: "/assets/2.png",
       },
       {
         name: "PHẦN MỀM ĐẶT PHÒNG",
         url: "http://icool.booknow.vtcode.vn:24600",
-        image: "/assets/nhap_tai_san.png",
+        image: "/assets/3.png",
       },
       {
         name: "ĐỒNG HỒ DOANH THU",
         url: "http://icoolpos.vtcode.vn:24600/",
-        image: "/assets/xuat_tai_san.png",
+        image: "/assets/4.png",
       },
       {
         name: "APP NHÂN VIÊN",
         url: "http://official.icool.com.vn:8989/",
-        image: "/assets/ton_tai_san.png",
+        image: "/assets/5.png",
       },
       {
         name: "RATING",
         url: "https://rating.icool.com.vn:3443/",
-        image: "/assets/luan_chuyen_tai_san.png",
+        image: "/assets/6.png",
       },
       {
         name: "CHUÔNG",
         url: "http://callme.icool.com.vn:8989/",
-        image: "/assets/dinh_gia_tai_san.png",
+        image: "/assets/7.png",
       },
       {
         name: "CRM",
         url: "https://cms-crm.icool.com.vn",
-        image: "/assets/thu_hoi_tai_san.png",
+        image: "/assets/8.png",
       },
       {
         name: "QUẢNG CÁO",
         url: "http://ads.icool.com.vn:8989",
-        image: "/assets/thanh_ly.png",
+        image: "/assets/9.png",
       },
       // {
       //   name: "BÁN TÀI SẢN",
@@ -133,8 +132,8 @@ class CircularMenu {
     this.menuItems.forEach((item, index) => {
       const angle = (index * 360) / this.menuItems.length;
       const radians = (angle * Math.PI) / 180;
-      const arrowRadius = 245;
-      const radius = 330;
+      const arrowRadius = 200;
+      const radius = 280;
       const itemX = centerX + radius * Math.cos(radians);
       const itemY = centerY + radius * Math.sin(radians);
 
@@ -145,7 +144,7 @@ class CircularMenu {
       menuItem.style.transform = `translate(-50%, -50%)`;
       menuItem.href = item.url;
       menuItem.target = "_blank";
-      menuItem.rel = "noopener noreferrer";
+      // menuItem.rel = "opener noreferrer";
       menuItem.innerHTML = `
         <div class="icon-circle">
             <img src="${item.image}" alt="${item.name}">
@@ -156,22 +155,22 @@ class CircularMenu {
 
       const span_index = menuItem.querySelector(".text");
       if (angle > 90 && angle < 270) {
-        span_index.style.left = "-30%";
-      }
-      else{
-        span_index.style.left = "130%";
+        span_index.style.left = "-29%";
+      } else {
+        span_index.style.left = "128%";
       }
       if (angle > 250 && angle < 270) {
         span_index.style.top = "-20%";
         span_index.style.left = "50%";
-      } else if (angle > 90 && angle < 100) {
+      }
+      if (angle > 90 && angle < 100) {
         span_index.style.top = "60%";
         span_index.style.left = "50%";
       }
 
       const dotAngle = (angle * Math.PI) / 180;
-      const dotX = Math.cos(dotAngle) * 210 + container.offsetWidth / 2;
-      const dotY = Math.sin(dotAngle) * 210 + container.offsetHeight / 2;
+      const dotX = Math.cos(dotAngle) * 160 + container.offsetWidth / 2;
+      const dotY = Math.sin(dotAngle) * 160 + container.offsetHeight / 2;
 
       const dot = document.createElementNS("http://www.w3.org/2000/svg", "g");
       dot.innerHTML = `
@@ -187,7 +186,7 @@ class CircularMenu {
       circleGroup.appendChild(dot);
 
       const arrowImg = document.createElement("img");
-      arrowImg.src = "/assets/arrow_01.png";
+      arrowImg.src = "/assets/arrow.png";
       arrowImg.className = "arrow";
       arrowImg.style.position = "absolute";
       arrowImg.style.width = "40px";
@@ -263,7 +262,6 @@ class CircularMenu {
       });
     });
   }
-
 }
 
 // Khởi tạo menu
