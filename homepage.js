@@ -202,7 +202,7 @@ class CircularMenu {
     });
 
     this.createMobileMenu();
-    this.setupResizeHandler(container);
+    this.setupResizeHandler();
   }
 
   createMobileMenu() {
@@ -222,24 +222,36 @@ class CircularMenu {
       mobileMenu.appendChild(mobileItem);
     });
   }
+  debounce(func, wait) {
+    let timeout;
+    return function (...args) {
+      clearTimeout(timeout);
+      timeout = setTimeout(() => func.apply(this, args), wait);
+    };
+  }
+  setupResizeHandler() {
+    const handleResize = debounce(() => {
+      const width = window.innerWidth;
 
-  setupResizeHandler(container) {
-    window.addEventListener("resize", () => {
-      window.location.reload();
-      // const menuItems = container.querySelectorAll(".menu-item");
-      // const radius =
-      //   Math.min(container.offsetWidth, container.offsetHeight) * 0.35;
-      // const totalItems = menuItems.length;
-      // const angleStep = (2 * Math.PI) / totalItems;
+      if (width <= 480) {
+        // Apply styles for mobile devices
+        document.body.classList.add("mobile");
+        document.body.classList.remove("tablet", "desktop");
+      } else if (width <= 768) {
+        // Apply styles for tablets
+        document.body.classList.add("tablet");
+        document.body.classList.remove("mobile", "desktop");
+      } else {
+        // Apply styles for desktops
+        document.body.classList.add("desktop");
+        document.body.classList.remove("mobile", "tablet");
+      }
+    }, 100);
 
-      // menuItems.forEach((item, index) => {
-      //   const angle = index * angleStep - Math.PI / 2;
-      //   const x = radius * Math.cos(angle) + container.offsetWidth / 2 - 50;
-      //   const y = radius * Math.sin(angle) + container.offsetHeight / 2 - 50;
-      //   item.style.left = `${x}px`;
-      //   item.style.top = `${y}px`;
-      // });
-    });
+    window.addEventListener("resize", handleResize);
+
+    // Initial call to set the correct layout
+    handleResize();
   }
 
   init() {
