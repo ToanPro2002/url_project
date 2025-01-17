@@ -35,12 +35,13 @@ body {
 }
 
 .center-icon {
-  width: 150px;
+  width: 30%;
   aspect-ratio: 1;
   margin-bottom: 20px;
+  margin-left: 20px;
   max-width: 100%;
   object-fit: contain;
-  border-radius: 50%;
+  /* border-radius: 50%; */
 }
 
 .title {

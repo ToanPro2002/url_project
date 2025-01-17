@@ -46,16 +46,16 @@ class CircularMenu {
         url: "http://ads.icool.com.vn:8989",
         image: "/assets/9.png",
       },
-      // {
-      //   name: "BÁN TÀI SẢN",
-      //   url: "https://google.com",
-      //   image: "/assets/sale_assets.png",
-      // },
-      // {
-      //   name: "THUÊ TÀI SẢN",
-      //   url: "https://google.com",
-      //   image: "/assets/thue_tai_san.png",
-      // },
+      {
+        name: "ĐẦU MÁY",
+        url: "https://google.com",
+        image: "/assets/10.png",
+      },
+      {
+        name: "PHẦN MỀM KẾ TOÁN",
+        url: "https://google.com",
+        image: "/assets/11.png",
+      },
       // {
       //   name: "MƯỢN TÀI SẢN",
       //   url: "https://google.com",
